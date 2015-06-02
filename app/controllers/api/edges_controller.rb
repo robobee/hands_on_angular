@@ -18,6 +18,12 @@ module Api
 			render json: edge, root: false
 		end
 
+		def destroy
+			edge = Edge.find(params[:id])
+			edge.delete
+			render json: {}
+		end
+
 	end
 
 end

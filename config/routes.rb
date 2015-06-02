@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :edges, only: [:index, :create]
+    resources :edges, only: [:index, :create, :destroy]
     resources :users, only: [:index]
     resources :categories, only: [:index]
   end
