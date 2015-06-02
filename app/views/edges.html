@@ -32,12 +32,13 @@
     </div>
 
     <ul id="edges" class="col-md-12">
-      <li ng-repeat-start="edge in edges | filter:{name: filterBy.search} | edges:filterBy" ng-click="selectEdge(edge)">
+      <li ng-repeat-start="edge in edges | filter:{name: filterBy.search} | edges:filterBy">
         <span class="label label-default">{{edge.category.name}}</span>
-        {{edge.name}}
+        <span ng-click="selectEdge(edge)">{{edge.name}}</span>
         <span class="text-muted">
           ({{displayRequirements(edge.requirements)}})
         </span>
+        <a ng-click="deleteEdge(edge)">Delete</a>
       </li>
       <li ng-repeat-end ng-show="isSelected(edge)">
         {{edge.description}}

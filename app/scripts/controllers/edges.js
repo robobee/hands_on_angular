@@ -6,6 +6,10 @@ angular.module('swFrontendApp')
     $scope.ranks = ranks.query();
     $scope.filterBy = filterBy;
 
+    $scope.deleteEdge = function(edge) {
+      edge.$delete();
+    };
+
     var selectedEdge = null;
 
     $scope.selectEdge = function(edge) {
