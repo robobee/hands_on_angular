@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :edges, only: [:index]
+    resources :edges, only: [:index, :create]
     resources :users, only: [:index]
+    resources :categories, only: [:index]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
