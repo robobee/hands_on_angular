@@ -1,23 +1,10 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name swFrontendApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the swFrontendApp
- */
 angular.module('swFrontendApp')
-  .controller('EdgesController', function ($scope, edges, categories, ranks) {
+  .controller('EdgesController', function ($scope, edges, filterBy, ranks) {
     $scope.edges = edges.query();
-    $scope.categories = categories.query();
     $scope.ranks = ranks.query();
-
-    $scope.filterBy = {
-      search: '',
-      category: $scope.categories[0],
-      rank: $scope.ranks[0]
-    };
+    $scope.filterBy = filterBy;
 
     var selectedEdge = null;
 
@@ -40,4 +27,4 @@ angular.module('swFrontendApp')
       }
       return result;
     }
-  });
+});

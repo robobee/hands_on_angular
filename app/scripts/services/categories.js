@@ -1,12 +1,5 @@
 'use strict';
 
-angular.module('swFrontendApp').service('categories', function() {
-  this.query = function() {
-    return [
-      { name: 'All' },
-      { name: 'Background' },
-      { name: 'Combat' },
-      { name: 'Leadership' }
-    ];
-  };
+angular.module('swFrontendApp').factory('categories', function($resource) {
+  return $resource('/api/categories');
 });
