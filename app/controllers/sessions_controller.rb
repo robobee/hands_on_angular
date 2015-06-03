@@ -1,6 +1,6 @@
 class SessionsController < Devise::SessionsController
 
-	skip_before_action :verify_signed_out_user, only: [:destroy]
+  skip_before_action :verify_signed_out_user, only: [:destroy]
   before_filter :authenticate_user_from_token!, except: [:create]
 
   def create
@@ -14,7 +14,6 @@ class SessionsController < Devise::SessionsController
   end
 
   def destroy
-  	puts 'hello'
     current_user.authentication_token = nil
     current_user.save!
     render json: {}

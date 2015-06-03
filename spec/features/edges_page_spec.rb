@@ -11,9 +11,9 @@ feature 'edges page', js: true do
 		create(:edge, description: 'desc1')
 		visit('/#/edges')
 		expect(page).not_to have_content('desc1')
-		first('ul#edges>li').click
+		first('ul#edges>li>.edge-name').click
 		expect(page).to have_content('desc1')
-		first('ul#edges>li').click
+		first('ul#edges>li>.edge-name').click
 		expect(page).not_to have_content('desc1')	
 	end
 
@@ -22,9 +22,9 @@ feature 'edges page', js: true do
 		create(:edge, description: 'desc2')
 		visit('/#/edges')
 		expect(page).not_to have_content('desc1')
-		first('ul#edges>li').click
+		first('ul#edges>li>.edge-name').click
 		expect(page).to have_content('desc1')
-		all('ul#edges>li')[2].click
+		all('ul#edges>li>.edge-name')[1].click
 		expect(page).not_to have_content('desc1')
 		expect(page).to have_content('desc2')
 	end

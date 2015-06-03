@@ -34,7 +34,7 @@
     <ul id="edges" class="col-md-12">
       <li ng-repeat-start="edge in edges | filter:{name: filterBy.search} | edges:filterBy">
         <span class="label label-default">{{edge.category.name}}</span>
-        <span ng-click="selectEdge(edge)">{{edge.name}}</span>
+        <span ng-click="selectEdge(edge)" class="edge-name">{{edge.name}}</span>
         <span class="text-muted">
           ({{displayRequirements(edge.requirements)}})
         </span>
