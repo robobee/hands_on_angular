@@ -6,7 +6,7 @@ module Api
     def index
       if current_user
         @users = User.all
-      	render json: @users
+      	render json: @users, root: false
       else
       	render json: {}, status: :unauthorized
       end
