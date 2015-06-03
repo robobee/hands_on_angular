@@ -26,6 +26,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'active_model_serializers'
 
 gem 'devise'
+
+gem 'puma'
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -36,6 +44,7 @@ gem 'devise'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'capybara'
