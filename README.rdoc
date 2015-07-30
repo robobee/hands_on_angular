@@ -2,4 +2,6 @@
 
 * Tuts+ "Hands on Angular" tutorial Sample App.
 
+* App at heroku[https://nameless-fjord-3878.herokuapp.com/#/login]
+
 * Some things are hidden behind login: admin@example.com, password.
